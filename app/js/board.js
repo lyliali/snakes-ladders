@@ -14,7 +14,7 @@ function populate(arr, size) {
 
 populate(board, size);
 
-// Match the Behance design; tile indices are off by 1
+// Match the Behance design
 function customize(arr) {
     arr[8] = 31;
     arr[17] = 39;
@@ -44,7 +44,7 @@ function takeTurn() {
         board[0] = next;
     }
     if (next === size) {
-        console.log("I win!");
+        alert("I win!");
     }
     return board[0];
 }
