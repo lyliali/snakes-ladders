@@ -32,6 +32,11 @@ function customize(arr) {
 
 customize(board);
 
+const tiles = document.getElementsByClassName("tile");
+for (let i = 0; i < tiles.length; i++) {
+    tiles[i].innerHTML = '<img src="./images/' + tiles[i].id + '.png">';
+}
+
 function roll() {
     return 1 + Math.floor(Math.random() * 6);
 }
