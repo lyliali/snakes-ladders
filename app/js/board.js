@@ -54,21 +54,27 @@ function takeTurn() {
     return board[0];
 }
 
-const activeText = '<span class="hereText" id="here">you are here</span>'
-                 + '<span class="rollText" id="roll">roll the die?</span>';
+function postRoll(tile) {
+    alert("You landed on " + tile);
+}
+
+const activeText = '<div id="activeText"><span class="hereText" id="here">you are here</span>'
+                 + '<span class="rollText" id="roll">roll the die?</span></div>';
 
 //const activeText = '<span class="label"></span>';
 
 function updateActiveTile(prev, current) {
-    document.getElementById(prev).classList.remove("active");
+    const p = document.getElementById(prev);
+    const c = document.getElementById(current);
+    p.classList.remove("active");
     try {
-        //needed to add this to circumvent undefined exception in initial page setup
-        document.getElementById("here").remove();
-        document.getElementById("roll").remove();
+        //needed to add try/catch to circumvent undefined exception in initial page setup
+        p.removeEventListener("click", takeTurn);
+        document.getElementById("activeText").remove();
     } catch {}
-    document.getElementById(current).classList.add("active");
-    document.getElementById(current).innerHTML += activeText;
-    document.getElementById(current).addEventListener("click", takeTurn);
+    c.classList.add("active");
+    c.innerHTML += activeText;
+    c.addEventListener("click", takeTurn);
 }
 
 updateActiveTile(board[0], board[0]);
