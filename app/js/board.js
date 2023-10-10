@@ -42,10 +42,9 @@ function takeTurn() {
     let r = roll();
     alert("You rolled a " + r);
     let current = board[0];
-    let next = board[current + r];
+    let next = current + r;
     if (next <= size) {
         updateActiveTile(current, next);
-        board[0] = next;
     }
     if (next === size) {
         alert("You win!");
@@ -54,8 +53,14 @@ function takeTurn() {
     return board[0];
 }
 
-function postRoll(tile) {
-    alert("You landed on " + tile);
+function mouseover() {
+    const position = board[0];
+    if (position != board[position]) {
+        console.log(position);
+        console.log(board[position]);
+        alert("snake or ladder");
+        updateActiveTile(position, board[position]);
+    }
 }
 
 const activeText = '<div id="activeText"><span class="hereText" id="here">you are here</span>'
@@ -63,18 +68,21 @@ const activeText = '<div id="activeText"><span class="hereText" id="here">you ar
 
 //const activeText = '<span class="label"></span>';
 
-function updateActiveTile(prev, current) {
-    const p = document.getElementById(prev);
+function updateActiveTile(current, next) {
     const c = document.getElementById(current);
-    p.classList.remove("active");
+    const n = document.getElementById(next);
+    c.classList.remove("active");
     try {
         //needed to add try/catch to circumvent undefined exception in initial page setup
-        p.removeEventListener("click", takeTurn);
+        c.removeEventListener("click", takeTurn);
+        c.removeEventListener("mouseover", mouseover);
         document.getElementById("activeText").remove();
     } catch {}
-    c.classList.add("active");
-    c.innerHTML += activeText;
-    c.addEventListener("click", takeTurn);
+    n.classList.add("active");
+    n.innerHTML += activeText;
+    n.addEventListener("click", takeTurn);
+    n.addEventListener("mouseover", mouseover);
+    board[0] = next;
 }
 
 updateActiveTile(board[0], board[0]);
