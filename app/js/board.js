@@ -1,10 +1,10 @@
 const board = [];
 // Let board[0] be the player's location
-const size = 101;
+const size = 100;
 
 function populate(arr, size) {
     arr.push(1);
-    for (let i = 1; i < size; i++) {
+    for (let i = 1; i <= size; i++) {
         arr.push(i);
     }
 }
@@ -40,14 +40,14 @@ function roll() {
 
 function takeTurn() {
     let r = roll();
-    console.log("I rolled " + r);
+    console.log("You rolled " + r);
     let next = board[board[0] + r];
     if (next <= size) {
         updateActiveTile(board[0], next);
         board[0] = next;
     }
     if (next === size) {
-        alert("I win!");
+        alert("You win!");
     }
     return board[0];
 }
