@@ -41,9 +41,10 @@ function roll() {
 function takeTurn() {
     let r = roll();
     console.log("You rolled " + r);
-    let next = board[board[0] + r];
+    let current = board[0];
+    let next = board[current + r];
     if (next <= size) {
-        updateActiveTile(board[0], next);
+        updateActiveTile(current, next);
         board[0] = next;
     }
     if (next === size) {
