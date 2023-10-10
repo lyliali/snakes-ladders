@@ -28,7 +28,10 @@ body {
 
 .footer p {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-style: italic;
+    color: gray;
+    line-height: 30%;
 }
 
 .board {
@@ -70,7 +73,6 @@ body {
 }
 
 .active span {
-    font-style: italic;
     position: absolute;
     top: 25%;
     left: 10%;
