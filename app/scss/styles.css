@@ -65,14 +65,25 @@ body {
     z-index: 1;
 }
 
-.active:hover img {
+.active img {
     opacity: 30%;
 }
 
-.activeText {
+.active span {
     font-style: italic;
     position: absolute;
     top: 25%;
     left: 10%;
-    opacity: 0%;
+}
+
+.active .rollText {
+    display: none;
+}
+
+.active:hover .hereText {
+    display: none;
+}
+
+.active:hover .rollText {
+    display: inline;
 }

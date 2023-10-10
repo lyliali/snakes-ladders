@@ -31,7 +31,7 @@ customize(board);
 
 const tiles = document.getElementsByClassName("tile");
 for (let i = 0; i < tiles.length; i++) {
-    tiles[i].innerHTML = '<img src="./images/' + tiles[i].id + '.png">';
+    tiles[i].innerHTML += '<img src="./images/' + tiles[i].id + '.png">';
 }
 
 function roll() {
@@ -54,13 +54,17 @@ function takeTurn() {
     return board[0];
 }
 
-const activeText = '<p class="activeText" id="here">you are here</p>';
+const activeText = '<span class="hereText" id="here">you are here</span>'
+                 + '<span class="rollText" id="roll">roll the die?</span>';
+
+//const activeText = '<span class="label"></span>';
 
 function updateActiveTile(prev, current) {
     document.getElementById(prev).classList.remove("active");
     try {
         //needed to add this to circumvent undefined exception in initial page setup
         document.getElementById("here").remove();
+        document.getElementById("roll").remove();
     } catch {}
     document.getElementById(current).classList.add("active");
     document.getElementById(current).innerHTML += activeText;
