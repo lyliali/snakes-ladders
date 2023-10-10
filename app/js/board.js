@@ -5,10 +5,7 @@ const size = 101;
 function populate(arr, size) {
     arr.push(1);
     for (let i = 1; i < size; i++) {
-        // Option 1: Regular tile, return i + 1
-        arr.push(i + 1);
-        // Option 2: Snake, return number between 1 and i
-        // Option 3: Ladder, return number between i + 1 and size - 1
+        arr.push(i);
     }
 }
 
@@ -44,7 +41,7 @@ function roll() {
 function takeTurn() {
     let r = roll();
     console.log("I rolled " + r);
-    let next = board[0] + r;
+    let next = board[board[0] + r];
     if (next <= size) {
         updateActiveTile(board[0], next);
         board[0] = next;
