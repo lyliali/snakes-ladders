@@ -49,6 +49,7 @@ function takeTurn() {
     }
     if (next === size) {
         alert("You win!");
+        location.href = "https://www.youtube.com/watch_popup?v=Qc7_zRjH808&autoplay=1";
     }
     return board[0];
 }
