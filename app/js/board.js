@@ -54,9 +54,16 @@ function takeTurn() {
     return board[0];
 }
 
+const activeText = '<p class="activeText" id="here">you are here</p>';
+
 function updateActiveTile(prev, current) {
     document.getElementById(prev).classList.remove("active");
+    try {
+        //needed to add this to circumvent undefined exception in initial page setup
+        document.getElementById("here").remove();
+    } catch {}
     document.getElementById(current).classList.add("active");
+    document.getElementById(current).innerHTML += activeText;
 }
 
 updateActiveTile(board[0], board[0]);
