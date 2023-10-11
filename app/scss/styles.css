@@ -13,7 +13,6 @@ html {
 
 body {
     overflow: hidden;
-    border: 5px solid black;
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -23,6 +22,20 @@ body {
 .header, .footer {
     height: 5vh;
     width: 100vw;
+}
+
+#sal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 13vw;
+}
+
+#tgor {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20vw;
 }
 
 .footer p {
