@@ -48,7 +48,11 @@ function takeTurn() {
     }
     if (next === size) {
         alert("You win!");
-        location.href = "https://www.youtube.com/watch_popup?v=Qc7_zRjH808&autoplay=1";
+        if (r % 2 === 0) {
+            location.href = "https://www.youtube.com/watch_popup?v=Qc7_zRjH808&autoplay=1";
+        } else {
+            location.href = "https://www.youtube.com/watch_popup?v=w9m6cwAU384&autoplay=1";
+        }
     }
     return board[0];
 }
