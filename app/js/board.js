@@ -62,7 +62,11 @@ function mouseover() {
     if (position != board[position]) {
         console.log(position);
         console.log(board[position]);
-        alert("snake or ladder");
+        if (position < board[position]) {
+            alert("ladder B)");
+        } else {
+            alert("snake!!!");
+        }
         updateActiveTile(position, board[position]);
     }
 }
