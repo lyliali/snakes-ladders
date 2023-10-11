@@ -71,8 +71,8 @@ function mouseover() {
     }
 }
 
-const activeText = '<div id="activeText"><span class="hereText" id="here">you are here</span>'
-                 + '<span class="rollText" id="roll">roll the die?</span></div>';
+const activeText = '<div id="activeText"><span class="hereText">you are here</span>'
+                 + '<span class="rollText">roll the die?</span></div>';
 
 //const activeText = '<span class="label"></span>';
 
