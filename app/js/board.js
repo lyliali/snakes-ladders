@@ -21,6 +21,7 @@ function customize() {
     flavorText[3] = "You're not gonna find someone if you don't put yourself out there! Maybe square 25 will loosen you up.";
     board[5] = 1;
     flavorText[5] = "It's been a month and they still haven't texted. Back to square 1!"
+    //board[6] = ;
     board[8] = 31;
     flavorText[8] = "A secret admirer has sent you chocolates and flowers, shooting you to square 31!";
     board[9] = 10;
@@ -37,6 +38,7 @@ function customize() {
     flavorText[19] = "Rereading your diary gives you insight to your love life, progressing you a square.";
     board[21] = 41;
     flavorText[21] = "Serenaded by your loved one, the force of your emotions sends you up to square 41."
+    //board[24] = ;
     board[27] = 20;
     flavorText[27] = "Time for some self reflection. Go back to square 20."
     board[28] = 75;
@@ -48,15 +50,15 @@ function customize() {
     board[37] = 57;
     flavorText[37] = "It's time to get out of bed! Move on to square 57.";
     board[38] = 32;
-    flavorText[38] = "You want to make it official, but they want to keep it a secret. You have a serious talk on square 32."
+    flavorText[38] = "You want to make it official, but they want to keep it a secret. Talk it out on square 32."
     board[43] = 1;
     flavorText[43] = "You decide to take a break from dating, and start back up again on square 1."
     board[45] = 20;
     flavorText[45] = "It takes two to be toxic! Go back to square 20."
     board[46] = 88;
     flavorText[46] = "Pregnancy scare! 😱 Move to square 88 to contemplate your life choices.";
-    board[49] = 25;
-    flavorText[49] = "Your style catches someone's eye, and you leave the party to get drinks on square 25.";
+    board[49] = 76;
+    flavorText[49] = "Your style catches someone's eye, and you leave the party to get drinks on square 76.";
     board[50] = 94;
     flavorText[50] = "A secret admirer sent you a love letter! Move to square 94 and write one back.";
     board[55] = 71;

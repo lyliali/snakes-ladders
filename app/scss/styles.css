@@ -87,6 +87,7 @@ body {
     position: absolute;
     top: 25%;
     left: 10%;
+    font-size: 150%;
 }
 
 .active .rollText {
