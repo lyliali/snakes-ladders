@@ -129,8 +129,6 @@ function takeTurn() {
 function mouseover() {
     const position = BOARD[0];
     if (position != BOARD[position]) {
-        console.log(position);
-        console.log(BOARD[position]);
         alert(FLAVOR_TEXT[position]);
         updateActiveTile(position, BOARD[position]);
     }
