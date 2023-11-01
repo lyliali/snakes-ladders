@@ -1,17 +1,18 @@
+/* Constants */
 const BOARD = [];
 const FLAVOR_TEXT = [];
 // Let BOARD[0] be the player's location
 const BOARD_SIZE = 100;
+const ACTIVE_TEXT = '<div id="activeText"><span class="hereText">you are here</span>'
+                    + '<span class="rollText">roll the die? 🎲</span></div>';
 
+/* Function Definitons */
 function populate(arr, size) {
     arr.push(1);
     for (let i = 1; i <= size; i++) {
         arr.push(i);
     }
 }
-
-populate(BOARD, BOARD_SIZE);
-populate(FLAVOR_TEXT, BOARD_SIZE);
 
 // Match the Behance design
 function customize() {
@@ -93,13 +94,6 @@ function customize() {
     FLAVOR_TEXT[99] = "Are you sure you're ready to commit? Let's reassess on square 81.";
 }
 
-customize();
-
-const tiles = document.getElementsByClassName("tile");
-for (let i = 0; i < tiles.length; i++) {
-    tiles[i].innerHTML += '<img src="./images/' + tiles[i].id + '.png">';
-}
-
 function roll() {
     return 1 + Math.floor(Math.random() * 6);
 }
@@ -136,9 +130,6 @@ function mouseover() {
     }
 }
 
-const activeText = '<div id="activeText"><span class="hereText">you are here</span>'
-                 + '<span class="rollText">roll the die? 🎲</span></div>';
-
 function updateActiveTile(current, next) {
     const c = document.getElementById(current);
     const n = document.getElementById(next);
@@ -150,10 +141,18 @@ function updateActiveTile(current, next) {
         document.getElementById("activeText").remove();
     } catch {}
     n.classList.add("active");
-    n.innerHTML += activeText;
+    n.innerHTML += ACTIVE_TEXT;
     n.addEventListener("click", takeTurn);
     n.addEventListener("mouseover", mouseover);
     BOARD[0] = next;
 }
 
+/* Function Calls */
+populate(BOARD, BOARD_SIZE);
+populate(FLAVOR_TEXT, BOARD_SIZE);
+customize();
+const tiles = document.getElementsByClassName("tile");
+for (let i = 0; i < tiles.length; i++) {
+    tiles[i].innerHTML += '<img src="./images/' + tiles[i].id + '.png">';
+}
 updateActiveTile(BOARD[0], BOARD[0]);
