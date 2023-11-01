@@ -133,19 +133,19 @@ function mouseover() {
 
 // Updates HTML elements to reflect the player's new position
 function updateActiveTile(current, next) {
-    const c = document.getElementById(current);
-    const n = document.getElementById(next);
-    c.classList.remove("active");
+    const currentTile = document.getElementById(current);
+    const nextTile = document.getElementById(next);
+    currentTile.classList.remove("active");
     try {
         //needed to add try/catch to circumvent undefined exception in initial page setup
-        c.removeEventListener("click", takeTurn);
-        c.removeEventListener("mouseover", mouseover);
+        currentTile.removeEventListener("click", takeTurn);
+        currentTile.removeEventListener("mouseover", mouseover);
         document.getElementById("activeText").remove();
     } catch {}
-    n.classList.add("active");
-    n.innerHTML += ACTIVE_TEXT;
-    n.addEventListener("click", takeTurn);
-    n.addEventListener("mouseover", mouseover);
+    nextTile.classList.add("active");
+    nextTile.innerHTML += ACTIVE_TEXT;
+    nextTile.addEventListener("click", takeTurn);
+    nextTile.addEventListener("mouseover", mouseover);
     BOARD[0] = next;
 }
 
