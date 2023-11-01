@@ -15,6 +15,8 @@ This project features introductory concepts including:
 * Event listeners
 * Arrays and For Loops in JavaScript
 
+For more insight into my development process, please see my [planning and design document](https://docs.google.com/document/d/1b6ah2m10sdaBB046bRS3y5pUcEJPtMZskGk-wxH7XWg/edit?usp=sharing).
+
 ## Installation
 
 Playing the game locally is as simple as downloading the root directory and opening index.html in a web browser of your choice.
