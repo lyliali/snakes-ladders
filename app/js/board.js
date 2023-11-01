@@ -3,8 +3,8 @@ const BOARD = [];
 const FLAVOR_TEXT = [];
 // Let BOARD[0] be the player's location
 const BOARD_SIZE = 100;
-const ACTIVE_TEXT = '<div id="activeText"><span class="hereText">you are here</span>'
-                    + '<span class="rollText">roll the die? 🎲</span></div>';
+const ACTIVE_TEXT = `<div id="activeText"><span class="hereText">you are here</span>
+                    <span class="rollText">roll the die? 🎲</span></div>`;
 
 /* Function Definitons */
 function populate(arr, size) {
@@ -99,19 +99,18 @@ function roll() {
 }
 
 function takeTurn() {
-    let r = roll();
-    alert("🎲 You rolled a " + r + "!");
+    let rolled = roll();
+    alert("🎲 You rolled a " + rolled + "!");
     let current = BOARD[0];
-    let next = current + r;
+    let next = current + rolled;
     if (next <= BOARD_SIZE) {
         updateActiveTile(current, next);
     } else {
-        let n = BOARD_SIZE - current;
-        alert("Too bad, you need a " + n + " to win.");
+        alert(`Too bad, you need a ${BOARD_SIZE - current} to win.`);
     }
     if (next === BOARD_SIZE) {
         alert("You win!");
-        if (r % 2 === 0) {
+        if (rolled % 2 === 0) {
             location.href = "https://www.youtube.com/watch_popup?v=Qc7_zRjH808&autoplay=1";
         } else {
             location.href = "https://www.youtube.com/watch_popup?v=w9m6cwAU384&autoplay=1";
