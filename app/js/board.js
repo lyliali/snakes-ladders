@@ -119,7 +119,6 @@ function generateTileHTML() {
 
     // Add tiles inside the board element
     const boardElement = document.getElementsByClassName("board")[0];
-    console.log(boardElement);
     for (let i = 0; i < tiles.length; i++) {
         boardElement.innerHTML += tiles[i];
     }
