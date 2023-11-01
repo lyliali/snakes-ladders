@@ -1,12 +1,16 @@
 /* Constants */
+// BOARD[0] is the player's current position
+// BOARD[n] corresponds to HTML tile with the same id
+// Value of BOARD[n] is the next tile the player should move to if they land on tile n
 const BOARD = [];
 const FLAVOR_TEXT = [];
-// Let BOARD[0] be the player's location
 const BOARD_SIZE = 100;
+// Text displayed on the active tile (the player's current position)
 const ACTIVE_TEXT = `<div id="activeText"><span class="hereText">you are here</span>
                     <span class="rollText">roll the die? 🎲</span></div>`;
 
 /* Function Definitons */
+// Initialize BOARD with position values
 function populate(arr, size) {
     arr.push(1);
     for (let i = 1; i <= size; i++) {
@@ -14,7 +18,7 @@ function populate(arr, size) {
     }
 }
 
-// Match the Behance design
+// Change initial values in BOARD and FLAVOR_TEXT to match the Behance design
 function customize() {
     BOARD[2] = 41;
     FLAVOR_TEXT[2] = "It's love at first sight! Cupid's arrow sends you straight to square 41."
@@ -94,10 +98,12 @@ function customize() {
     FLAVOR_TEXT[99] = "Are you sure you're ready to commit? Let's reassess on square 81.";
 }
 
+// Return a random integer between 1 and 6 (inclusive)
 function roll() {
     return 1 + Math.floor(Math.random() * 6);
 }
 
+// Rolls a die and moves the player to a new position; called when the player clicks on the active tile
 function takeTurn() {
     let rolled = roll();
     alert("🎲 You rolled a " + rolled + "!");
@@ -119,6 +125,7 @@ function takeTurn() {
     return BOARD[0];
 }
 
+// For any tile that is a snake or ladder and has flavor text, display an additional alert on mouseover, then move the player to the final position
 function mouseover() {
     const position = BOARD[0];
     if (position != BOARD[position]) {
@@ -129,6 +136,7 @@ function mouseover() {
     }
 }
 
+// Updates HTML elements to reflect the player's new position
 function updateActiveTile(current, next) {
     const c = document.getElementById(current);
     const n = document.getElementById(next);
