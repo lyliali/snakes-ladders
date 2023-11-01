@@ -116,11 +116,8 @@ function takeTurn() {
     }
     if (next === BOARD_SIZE) {
         alert("You win!");
-        if (rolled % 2 === 0) {
-            location.href = "https://www.youtube.com/watch_popup?v=Qc7_zRjH808&autoplay=1";
-        } else {
-            location.href = "https://www.youtube.com/watch_popup?v=w9m6cwAU384&autoplay=1";
-        }
+        const videoHash = (rolled % 2 === 0) ? "Qc7_zRjH808" : "w9m6cwAU384";
+        location.href = `https://www.youtube.com/watch_popup?v=${videoHash}&autoplay=1`
     }
     return BOARD[0];
 }
