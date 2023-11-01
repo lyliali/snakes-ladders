@@ -148,11 +148,15 @@ function updateActiveTile(current, next) {
 }
 
 /* Function Calls */
-populate(BOARD, BOARD_SIZE);
-populate(FLAVOR_TEXT, BOARD_SIZE);
-customize();
-const tiles = document.getElementsByClassName("tile");
-for (let i = 0; i < tiles.length; i++) {
-    tiles[i].innerHTML += '<img src="./images/' + tiles[i].id + '.png">';
-}
-updateActiveTile(BOARD[0], BOARD[0]);
+
+// Call everything on initial page load
+window.onload = (event) => {
+    populate(BOARD, BOARD_SIZE);
+    populate(FLAVOR_TEXT, BOARD_SIZE);
+    customize();
+    const tiles = document.getElementsByClassName("tile");
+    for (let i = 0; i < tiles.length; i++) {
+        tiles[i].innerHTML += '<img src="./images/' + tiles[i].id + '.png">';
+    }
+    updateActiveTile(BOARD[0], BOARD[0]);
+};
