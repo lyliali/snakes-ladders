@@ -98,6 +98,33 @@ function customize() {
     FLAVOR_TEXT[99] = "Are you sure you're ready to commit? Let's reassess on square 81.";
 }
 
+function generateTileHTML() {
+    // Generate array of tile HTML elements in correct order
+    let tiles = [];
+    for (let i = 10; i >= 1; i--) {
+        let row = [];
+        for (let j = 0; j < 10; j++) {
+            let id = 10 * i - j;
+            let tile = `<div class="tile" id="${id}"><img src="./images/${id}.png"></div>`;
+            if (i % 2 === 0) {
+                // Add tiles in descending order (100, 99, 98...)
+                row.push(tile);
+            } else {
+                // Add tiles in ascending order (81, 82, 83...)
+                row.unshift(tile);
+            }
+        }
+        tiles = tiles.concat(row);
+    }
+
+    // Add tiles inside the board element
+    const boardElement = document.getElementsByClassName("board")[0];
+    console.log(boardElement);
+    for (let i = 0; i < tiles.length; i++) {
+        boardElement.innerHTML += tiles[i];
+    }
+}
+
 // Return a random integer between 1 and 6 (inclusive)
 function roll() {
     return 1 + Math.floor(Math.random() * 6);
@@ -147,33 +174,6 @@ function updateActiveTile(current, next) {
     nextTile.addEventListener("click", takeTurn);
     nextTile.addEventListener("mouseover", mouseover);
     BOARD[0] = next;
-}
-
-function generateTileHTML() {
-    // Generate array of tile HTML elements in correct order
-    let tiles = [];
-    for (let i = 10; i >= 1; i--) {
-        let row = [];
-        for (let j = 0; j < 10; j++) {
-            let id = 10 * i - j;
-            let tile = `<div class="tile" id="${id}"><img src="./images/${id}.png"></div>`;
-            if (i % 2 === 0) {
-                // Add tiles in descending order (100, 99, 98...)
-                row.push(tile);
-            } else {
-                // Add tiles in ascending order (81, 82, 83...)
-                row.unshift(tile);
-            }
-        }
-        tiles = tiles.concat(row);
-    }
-
-    // Add tiles inside the board element
-    const boardElement = document.getElementsByClassName("board")[0];
-    console.log(boardElement);
-    for (let i = 0; i < tiles.length; i++) {
-        boardElement.innerHTML += tiles[i];
-    }
 }
 
 /* Function Calls */
