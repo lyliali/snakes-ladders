@@ -24,14 +24,14 @@ body {
     width: 100vw;
 }
 
-#sal {
+#title {
     position: absolute;
     top: 0;
     left: 0;
     width: 13vw;
 }
 
-#tgor {
+#tagline {
     position: absolute;
     top: 0;
     right: 0;
@@ -76,11 +76,15 @@ body {
 
 .active {
     box-shadow: 0 0 5px 5px rgba(250, 240, 0, 0.8);
-    z-index: 1;
+    z-index: 4;
 }
 
 .active img {
     opacity: 30%;
+}
+
+.active:hover {
+    cursor: pointer
 }
 
 .active span {
