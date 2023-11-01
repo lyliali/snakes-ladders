@@ -28,6 +28,7 @@ I consider this project to be finished at MVP (minimum viable product) state. Be
 * Add WASD / arrow keyboard controls to roll and hover over tiles
 * Animate the roll feature by highlighting each tile that is passed over between the player's current position to their final position
 * Add sound effects
+* Add some kind of time-out that corresponds to the average player's attention span, so that instead of getting bored and never finishing the game, the page redirects them to the final YouTube video right *before* they get bored
 
 **Extension**
 
@@ -35,7 +36,7 @@ I consider this project to be finished at MVP (minimum viable product) state. Be
 
 ## Contributing
 
-I'd love to hear your feedback, especially on the code, game experience, or visual layout of the webpage. Please feel free to email me at lyliax@gmail.com!
+I'd love to hear your feedback, especially on the code, game experience, visual layout of the webpage, and of course, if there are any bugs I haven't discovered. Please feel free to email me at lyliax@gmail.com!
 
 ## Acknowledgements
 
